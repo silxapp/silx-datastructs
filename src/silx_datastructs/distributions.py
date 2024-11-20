@@ -86,6 +86,11 @@ class CountDistribution(BaseModel):
         for i in range(len(self.probabilities)):
             self.probabilities[i].rescale(new_denominator)
 
+        # Check for rounding errors
+        numerator_sum = sum(map(lambda p: p.numerator, self.probabilities))
+        diff = self.N - numerator_sum
+        self.probabilities[i].numerator += diff
+
     def check(self) -> None:
         if not _all_equal(map(lambda x: x.denominator, self.probabilities)):
             raise ValueError("Invalid distribution: denominators not all equal")
@@ -134,7 +139,7 @@ class CountDistribution(BaseModel):
         if my_probs.keys() != input_probs.keys():
             raise ValueError(
                 f"cannot add different distributions"
-                " {list(my_probs.keys())} {list(input_probs.keys())}"
+                f" {list(my_probs.keys())} {list(input_probs.keys())}"
             )
 
         new_probs: list[SingleCountProbability] = []

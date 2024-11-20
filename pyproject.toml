@@ -1,6 +1,6 @@
 [project]
 name = "silx-datastructs"
-version = "0.2.1"
+version = "0.2.2"
 description = "Data structures for communicating between systems"
 readme = "README.md"
 authors = [
