@@ -1,17 +1,11 @@
 [project]
 name = "silx-datastructs"
-version = "0.2.2"
+version = "0.2.3"
 description = "Data structures for communicating between systems"
 readme = "README.md"
-authors = [
-    { name = "Michael Samsom", email = "michael@silx.ca" }
-]
+authors = [{ name = "Michael Samsom", email = "michael@silx.ca" }]
 requires-python = ">=3.10"
-dependencies = [
-    "numpy",
-    "pydantic>=2.9.2",
-    "scipy>=1.14.1",
-]
+dependencies = ["numpy", "pydantic>=2.9.2", "scipy>=1.14.1"]
 
 [build-system]
 requires = ["hatchling"]
