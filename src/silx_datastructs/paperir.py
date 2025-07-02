@@ -22,7 +22,7 @@ class StudyInfo(BaseModel):
     abstract: Optional[str] = None
     sponsor: Optional[str] = None
     n_arms: Optional[int] = 1
-    references: Optional[Publication] = None
+    references: Optional[list[Publication]] = None
 
 
 class StudySponsor(BaseModel):
