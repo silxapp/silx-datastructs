@@ -17,7 +17,8 @@ class StudyInfo(BaseModel):
     study_date: date
     study_type: str
     phase: str
-    status: str = "Completed"
+    status: str
+    countries: list[str]
     enrollment: Optional[int] = None
     short_title: Optional[str] = None
     abstract: Optional[str] = None
@@ -44,6 +45,7 @@ class PaperIR(BaseModel):
     id: str
     study_info: StudyInfo
     study_design: StudyDesign
-    authors: list[StudySponsor] | list[Author]
+    authors: list[Author]
+    sponsors: list[StudySponsor]
     source_index: list[Any]
     dag: list[ProbabilityStatement]
