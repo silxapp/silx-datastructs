@@ -16,6 +16,7 @@ class StudyInfo(BaseModel):
     title: Optional[str]
     study_date: date
     study_type: str
+    phase: str
     status: str = "Completed"
     enrollment: Optional[int] = None
     short_title: Optional[str] = None
