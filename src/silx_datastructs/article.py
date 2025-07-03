@@ -6,6 +6,7 @@ from pydantic import BaseModel
 class Author(BaseModel):
     surname: str
     givennames: str
+    role: Optional[str] = None
     affiliations: Optional[list[str]] = None
 
 
