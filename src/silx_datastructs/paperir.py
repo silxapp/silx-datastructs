@@ -13,7 +13,9 @@ class Publication(BaseModel):
 
 
 class StudyInfo(BaseModel):
-    title: Optional[str]
+    title: str
+    brief_description: str
+    detailed_description: str
     study_date: date
     study_type: str
     phase: str
@@ -23,7 +25,7 @@ class StudyInfo(BaseModel):
     short_title: Optional[str] = None
     abstract: Optional[str] = None
     sponsor: Optional[str] = None
-    n_arms: Optional[int] = 1
+    n_arms: int = 1
     references: Optional[list[Publication]] = None
 
 
